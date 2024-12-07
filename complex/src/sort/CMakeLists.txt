@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(sort)
 
-# 头文件搜索路径
+# 头文件路径
 include_directories(${HEADPATH})
 # 搜索源文件
 aux_source_directory(./ SRC)
