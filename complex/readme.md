@@ -1,1 +1,0 @@
-ProtoBuffer-3.21库需要手动安装，之后通过find_package(Protobuf 3)函数就可以找到/usr/local/share/cmake-3.22/Modules/FindProtobuf.cmake模块文件，通过该模块文件去查找protoc可执行文件，protobuf头文件，protobuf库文件，如果没有安装Protobuf就会找不到报错，找到了会同时设置Protobuf预定义的变量

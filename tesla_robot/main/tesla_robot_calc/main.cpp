@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../src/calc/calc.h"
+#include "../../src/calc/calc.h"
 
 int main()
 {
