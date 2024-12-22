@@ -1,5 +1,5 @@
-#ifndef COMPLEX_SORT_SORT_H_
-#define COMPLEX_SORT_SORT_H_
+#ifndef COMPLEX_SORT_SORT_HPP
+#define COMPLEX_SORT_SORT_HPP
 
 #include <vector>
 

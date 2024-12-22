@@ -1,8 +1,10 @@
-#include <stdio.h>
+#include <iostream>
 #include "../../src/calc/calc.h"
+#include "../../include/git_version.h"
 
 int main()
 {
+    std::cout << "git branch: " << git_branch() << ", git hash: " << git_hash() << std::endl;
     int a = 20;
     int b = 12;
     printf("a = %d, b = %d\n", a, b);
