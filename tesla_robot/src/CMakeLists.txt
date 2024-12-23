@@ -11,6 +11,9 @@ macro(load_source header_files source_files)
     list(FILTER  ${source_files} EXCLUDE REGEX  ".*_testing.cpp")
 endmacro()
 
+add_subdirectory(calc)
+add_subdirectory(sort)
+
 load_source(HDRS SRCS)
 
 add_library(${LIB_NAME_STATIC} STATIC

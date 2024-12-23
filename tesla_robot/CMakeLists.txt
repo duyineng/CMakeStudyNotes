@@ -32,11 +32,17 @@ SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # ${CMAKE_BINARY_DIR
 SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-add_subdirectory(third_part/googletest)
+# 编译可选项
+option(ENABLE_TESTS "Build with tests" ON)  # 启用测试用例
 
 # 添加子目录
-add_subdirectory(src)
-add_subdirectory(main/tesla_robot_calc)
-add_subdirectory(main/tesla_robot_sort)
+add_subdirectory(src)                   # 生成主静态库
+add_subdirectory(main/tesla_robot_calc) # 通过主静态库，生成tesla_robot_calc可执行程序
+add_subdirectory(main/tesla_robot_sort) # 通过主静态库，生成tesla_robot_sort可执行程序
 
-add_subdirectory(tests)
+
+if (ENABLE_TESTS)
+    message(STATUS "ENABLE_TESTS: ${ENABLE_TESTS}")
+    add_subdirectory(third_part/googletest) # 生成gtest库
+    add_subdirectory(tests)                 # 生成单元测试程序
+endif ()
