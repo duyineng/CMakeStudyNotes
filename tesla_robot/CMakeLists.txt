@@ -26,6 +26,8 @@ configure_file(
 )
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE "Debug")       # 设置构建类型为Debug
+SET(CMAKE_CXX_FLAGS_DEBUG "-O0 -g") # 构建类型为Debug时，禁用优化，并启用调试符号
 
 # 全局设置编译后的库和可执行程序存放目录
 SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) # ${CMAKE_BINARY_DIR}为根构建目录
@@ -34,6 +36,8 @@ SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # 编译可选项
 option(ENABLE_TESTS "Build with tests" ON)  # 启用测试用例
+
+
 
 # 添加子目录
 add_subdirectory(src)                   # 生成主静态库
